@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<style>
+    form{
+        margin: auto;
+        width: 35%;
+    }
+    .result
+    {
+        margin: auto;
+        width: 35%;
+        border: 1px solid #ccc
+    }   
+    
+</style>
+
+<head>
+    <title>Прогнозирование зарплаты</title>
+</head>
+
+<form action = "{{url_for('main')}}" method ='POST'>
+    <fieldset>
+	
+        <legend>Модуль упругости при растяжении, ГПа</legend>
+		<br>
+        <br>
+		Угол нашивки, град
+        <input name = "s1" type = "number"
+        required>
+        <br>
+        <br>
+		Шаг нашивки
+        <input name = "s2" type = "number"
+        required>
+        <br>
+        <br> 
+		Плотность нашивки
+        <input name = "s3" type = "number"
+		required>
+		
+		<br>
+        <br> 
+		Соотношение матрица-наполнитель
+        <input name = "s4" type = "number"
+		required>
+		<br>
+        <br> 
+		Плотность, кг/м3
+        <input name = "s5" type = "number"
+		required>
+		<br>
+        <br> 
+		модуль упругости, ГПа
+        <input name = "s6" type = "number"
+		required>
+		<br>
+        <br> 
+		Количество отвердителя, м.%
+        <input name = "s7" type = "number"
+		required>
+		<br>
+        <br> 
+		Содержание эпоксидных групп,%_2
+        <input name = "s8" type = "number"
+		required>
+		<br>
+        <br> 
+		Температура вспышки, С_2
+        <input name = "s9" type = "number"
+		required>
+		<br>
+        <br> 
+		Поверхностная плотность, г/м2
+        <input name = "s10" type = "number"
+		required>
+		<br>
+        <br> 
+		Прочность при растяжении, МПа
+        <input name = "s11" type = "number"
+		required>
+		<br>
+        <br> 
+		Потребление смолы, г/м2
+        <input name = "s12" type = "number"
+		required>
+		<br>
+        <br> 
+        <input type ='submit'>
+    </fieldset>
+</form>
+
+<div class = "result" align = "center">
+    {%if result%}
+        <br>
+        <p style = "font-size: 50px">
+        Forecast
+        </p>
+        <p style = "font-size: 50px"> {{result}}</p>
+    {%endif%}    
+</div>
+    
